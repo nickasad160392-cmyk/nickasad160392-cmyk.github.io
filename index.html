@@ -7,7 +7,7 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{--bg:#0a0a0f;--card:#12121a;--border:#1e1e2e;--accent:#fe2c55;--blue:#25f4ee;--green:#00d084;--yellow:#ffc107;--text:#e8e8f0;--muted:#8888a0}
-body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;padding:16px;max-width:960px;margin:0 auto}
+body{background:var(--bg);color:var(--text);font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;line-height:1.6;padding:16px;max-width:980px;margin:0 auto}
 h1{font-size:1.6em;text-align:center;padding:20px 0 10px;background:linear-gradient(135deg,var(--accent),var(--blue));-webkit-background-clip:text;-webkit-text-fill-color:transparent}
 h2{font-size:1.2em;color:var(--accent);margin:24px 0 12px;padding-bottom:6px;border-bottom:1px solid var(--border)}
 h3{font-size:1em;color:var(--blue);margin:16px 0 8px}
@@ -18,13 +18,17 @@ h3{font-size:1em;color:var(--blue);margin:16px 0 8px}
 .stat .value{font-size:1.4em;font-weight:700;color:var(--blue)}
 .stat .label{font-size:0.75em;color:var(--muted);margin-top:4px}
 table{width:100%;border-collapse:collapse;margin:8px 0;font-size:0.85em}
-th,td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--border)}
-th{color:var(--muted);font-weight:600;font-size:0.8em;text-transform:uppercase}
-tr:hover{background:rgba(255,255,255,0.02)}
-.rank{display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background:var(--border);font-size:0.75em;font-weight:700}
+th{color:var(--muted);font-weight:600;font-size:0.78em;text-transform:uppercase;padding:10px 8px;border-bottom:2px solid var(--border);text-align:left}
+td{padding:10px 8px;border-bottom:1px solid var(--border);vertical-align:middle}
+tr:hover{background:rgba(255,255,255,0.03)}
+tr:nth-child(even){background:rgba(255,255,255,0.01)}
+.rank{display:inline-block;width:26px;height:26px;line-height:26px;text-align:center;border-radius:50%;background:var(--border);font-size:0.75em;font-weight:700}
 .rank.top1{background:gold;color:#000}
 .rank.top2{background:silver;color:#000}
 .rank.top3{background:#cd7f32;color:#000}
+.num{text-align:right;font-variant-numeric:tabular-nums}
+.title-cell{max-width:320px;word-wrap:break-word}
+.lc{text-align:center}
 .bar{height:6px;background:var(--border);border-radius:3px;overflow:hidden;margin-top:4px}
 .bar-fill{height:100%;border-radius:3px;background:linear-gradient(90deg,var(--accent),var(--blue))}
 .tag{display:inline-block;padding:2px 8px;border-radius:12px;font-size:0.75em;margin:2px}
@@ -37,9 +41,15 @@ tr:hover{background:rgba(255,255,255,0.02)}
 .footer{text-align:center;padding:20px;color:var(--muted);font-size:0.75em}
 a{color:var(--blue);text-decoration:none}
 a:hover{text-decoration:underline}
-.video-link{display:inline-block;padding:3px 10px;border-radius:8px;background:rgba(254,44,85,0.2);color:var(--accent);font-size:0.85em;font-weight:600;white-space:nowrap}
-.video-link:hover{background:rgba(254,44,85,0.4);text-decoration:none}
-.lc{text-align:center}
+.video-link{display:inline-block;padding:4px 12px;border-radius:8px;background:linear-gradient(135deg,#fe2c55,#ff6b6b);color:#fff;font-size:0.8em;font-weight:700;white-space:nowrap;transition:all 0.2s}
+.video-link:hover{transform:scale(1.05);box-shadow:0 2px 8px rgba(254,44,85,0.4);text-decoration:none;color:#fff}
+@media(max-width:600px)
+{  body{padding:10px}
+  table{font-size:0.78em}
+  td,th{padding:6px 4px}
+  .title-cell{max-width:160px}
+  .grid{grid-template-columns:repeat(2,1fr)}
+}
 </style>
 </head>
 <body>
@@ -66,54 +76,261 @@ a:hover{text-decoration:underline}
 <h2>🏆 10 Video Teratas (Tayangan)</h2>
 <div class="card">
 <table>
-<tr><th>#</th><th>Tayangan</th><th>❤️</th><th>💬</th><th>⏱</th><th>ER</th><th>Judul</th><th>Link</th></tr>
-<tr><td><span class="rank top1">1</span></td><td>25000</td><td>192</td><td>17</td><td>29d</td><td>0,84%</td><td>Masa ga mau punya rumah disini 🤩 Rumah Subsidi Tanpa Renovasi</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7377223510952905989" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top2">2</span></td><td>24900</td><td>1438</td><td>12</td><td>19d</td><td>5,82%</td><td>Yuuk miliki rumah impian kamu. Tanpa Renovasi dan siap huni</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7409860574256925960" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top3">3</span></td><td>22300</td><td>51</td><td>6</td><td>20d</td><td>0,26%</td><td>Penggunaan Sirtu Pada Konstruksi</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7313090077540748550" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">4</span></td><td>22100</td><td>198</td><td>5</td><td>30d</td><td>0,92%</td><td>Step pertama buat hunian impian, pengukuran tanah</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7483754278062951686" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">5</span></td><td>14700</td><td>154</td><td>34</td><td>83d</td><td>1,28%</td><td>RUMAH SUBSIDI SEMEWAH INI?!!! Bhumi Saka Arum</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">6</span></td><td>12500</td><td>170</td><td>75</td><td>79d</td><td>1,96%</td><td>EMANG ADA IKLAN RUMAH YG SEMUANYA BILANG MURAH??!</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7527966342968773893" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">7</span></td><td>8242</td><td>108</td><td>3</td><td>20d</td><td>1,35%</td><td>Yok Meroket 🔥🔥🔥</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7385083893243858181" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">8</span></td><td>8190</td><td>74</td><td>5</td><td>15d</td><td>0,96%</td><td>Rumah Nyaman, Investasi Aman!🏡✨</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7447111716317498632" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">9</span></td><td>8053</td><td>93</td><td>6</td><td>59d</td><td>1,23%</td><td>SYAHFALAH Bagi-Bagi FEE Dan THR 💰💸</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7355724861391523078" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">10</span></td><td>7009</td><td>108</td><td>5</td><td>13d</td><td>1,61%</td><td>Kata siapa beli rumah itu mahal? Rumah 2 lantai</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7422180513387121925" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-
+<tr><th>#</th><th>Tayangan</th><th>❤️ Suka</th><th>💬 Komentar</th><th>⏱ Umur</th><th>ER</th><th>Judul Video</th><th>Link</th></tr>
+<tr>
+  <td><span class="rank top1">1</span></td>
+  <td class="num">25,000</td>
+  <td class="num">192</td>
+  <td class="num">17</td>
+  <td>29d</td>
+  <td>0,84%</td>
+  <td class="title-cell">Masa ga mau punya rumah disini 🤩 Rumah Subsidi Tanpa Renovasi</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7377223510952905989" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank top2">2</span></td>
+  <td class="num">24,900</td>
+  <td class="num">1,438</td>
+  <td class="num">12</td>
+  <td>19d</td>
+  <td>5,82%</td>
+  <td class="title-cell">Yuuk miliki rumah impian kamu. Tanpa Renovasi dan siap huni</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7409860574256925960" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank top3">3</span></td>
+  <td class="num">22,300</td>
+  <td class="num">51</td>
+  <td class="num">6</td>
+  <td>20d</td>
+  <td>0,26%</td>
+  <td class="title-cell">Penggunaan Sirtu Pada Konstruksi</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7313090077540748550" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">4</span></td>
+  <td class="num">22,100</td>
+  <td class="num">198</td>
+  <td class="num">5</td>
+  <td>30d</td>
+  <td>0,92%</td>
+  <td class="title-cell">Step pertama buat hunian impian, pengukuran tanah</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7483754278062951686" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">5</span></td>
+  <td class="num">14,700</td>
+  <td class="num">154</td>
+  <td class="num">34</td>
+  <td>83d</td>
+  <td>1,28%</td>
+  <td class="title-cell">RUMAH SUBSIDI SEMEWAH INI?!!! Bhumi Saka Arum</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">6</span></td>
+  <td class="num">12,500</td>
+  <td class="num">170</td>
+  <td class="num">75</td>
+  <td>79d</td>
+  <td>1,96%</td>
+  <td class="title-cell">EMANG ADA IKLAN RUMAH YG SEMUANYA BILANG MURAH??!</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7527966342968773893" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">7</span></td>
+  <td class="num">8,242</td>
+  <td class="num">108</td>
+  <td class="num">3</td>
+  <td>20d</td>
+  <td>1,35%</td>
+  <td class="title-cell">Yok Meroket 🔥🔥🔥</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7385083893243858181" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">8</span></td>
+  <td class="num">8,190</td>
+  <td class="num">74</td>
+  <td class="num">5</td>
+  <td>15d</td>
+  <td>0,96%</td>
+  <td class="title-cell">Rumah Nyaman, Investasi Aman!🏡✨</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7447111716317498632" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">9</span></td>
+  <td class="num">8,053</td>
+  <td class="num">93</td>
+  <td class="num">6</td>
+  <td>59d</td>
+  <td>1,23%</td>
+  <td class="title-cell">SYAHFALAH Bagi-Bagi FEE Dan THR 💰💸</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7355724861391523078" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">10</span></td>
+  <td class="num">7,009</td>
+  <td class="num">108</td>
+  <td class="num">5</td>
+  <td>13d</td>
+  <td>1,61%</td>
+  <td class="title-cell">Kata siapa beli rumah itu mahal? Rumah 2 lantai</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7422180513387121925" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
 </table>
 </div>
 
 <h2>❤️ 10 Video Teratas (Suka)</h2>
 <div class="card">
 <table>
-<tr><th>#</th><th>Suka</th><th>Tayangan</th><th>Judul</th><th>Link</th></tr>
-<tr><td><span class="rank top1">1</span></td><td>1438</td><td>24900</td><td>Yuuk miliki rumah impian kamu. Tanpa Renovasi dan siap huni</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7409860574256925960" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top2">2</span></td><td>198</td><td>22100</td><td>Step pertama buat hunian impian, pengukuran tanah</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7483754278062951686" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top3">3</span></td><td>192</td><td>25000</td><td>Masa ga mau punya rumah disini 🤩</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7377223510952905989" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">4</span></td><td>170</td><td>12500</td><td>EMANG ADA IKLAN RUMAH YG SEMUANYA BILANG MURAH??!</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7527966342968773893" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">5</span></td><td>154</td><td>14700</td><td>RUMAH SUBSIDI SEMEWAH INI?!!!</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">6</span></td><td>108</td><td>7009</td><td>Kata siapa beli rumah itu mahal?</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7422180513387121925" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">7</span></td><td>108</td><td>8242</td><td>Yok Meroket 🔥</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7385083893243858181" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">8</span></td><td>93</td><td>8053</td><td>SYAHFALAH Bagi-Bagi FEE Dan THR</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7355724861391523078" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">9</span></td><td>87</td><td>6800</td><td>Coming Soon Bhumi Saka Arum</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7376454358499609861" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">10</span></td><td>81</td><td>5200</td><td>Masio lomba iso karepe panitia</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7540198039743515960" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-
+<tr><th>#</th><th>❤️ Suka</th><th>Tayangan</th><th>Judul Video</th><th>Link</th></tr>
+<tr>
+  <td><span class="rank top1">1</span></td>
+  <td class="num">1,438</td>
+  <td class="num">24,900</td>
+  <td class="title-cell">Yuuk miliki rumah impian kamu. Tanpa Renovasi dan siap huni</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7409860574256925960" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank top2">2</span></td>
+  <td class="num">198</td>
+  <td class="num">22,100</td>
+  <td class="title-cell">Step pertama buat hunian impian, pengukuran tanah</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7483754278062951686" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank top3">3</span></td>
+  <td class="num">192</td>
+  <td class="num">25,000</td>
+  <td class="title-cell">Masa ga mau punya rumah disini 🤩</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7377223510952905989" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">4</span></td>
+  <td class="num">170</td>
+  <td class="num">12,500</td>
+  <td class="title-cell">EMANG ADA IKLAN RUMAH YG SEMUANYA BILANG MURAH??!</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7527966342968773893" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">5</span></td>
+  <td class="num">154</td>
+  <td class="num">14,700</td>
+  <td class="title-cell">RUMAH SUBSIDI SEMEWAH INI?!!!</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">6</span></td>
+  <td class="num">108</td>
+  <td class="num">7,009</td>
+  <td class="title-cell">Kata siapa beli rumah itu mahal?</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7422180513387121925" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">7</span></td>
+  <td class="num">108</td>
+  <td class="num">8,242</td>
+  <td class="title-cell">Yok Meroket 🔥</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7385083893243858181" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">8</span></td>
+  <td class="num">93</td>
+  <td class="num">8,053</td>
+  <td class="title-cell">SYAHFALAH Bagi-Bagi FEE Dan THR</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7355724861391523078" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">9</span></td>
+  <td class="num">87</td>
+  <td class="num">6,800</td>
+  <td class="title-cell">Coming Soon Bhumi Saka Arum</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7376454358499609861" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">10</span></td>
+  <td class="num">81</td>
+  <td class="num">5,200</td>
+  <td class="title-cell">Masio lomba iso karepe panitia</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7540198039743515960" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
 </table>
 </div>
 
 <h2>💬 10 Video Teratas (Komentar)</h2>
 <div class="card">
 <table>
-<tr><th>#</th><th>Komentar</th><th>Tayangan</th><th>Judul</th><th>Link</th></tr>
-<tr><td><span class="rank top1">1</span></td><td>75</td><td>12500</td><td>EMANG ADA IKLAN RUMAH YG SEMUANYA BILANG MURAH??!</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7527966342968773893" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top2">2</span></td><td>34</td><td>14700</td><td>RUMAH SUBSIDI SEMEWAH INI?!!!</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank top3">3</span></td><td>24</td><td>6200</td><td>RUMAH SUBSIDI TANPA RENOVASI SATU SATUNYA 2 LANTAI</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">4</span></td><td>20</td><td>4023</td><td>Rumah subsidi 2 lantai sekeren ini kirain 300 juta ke atas</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">5</span></td><td>19</td><td>1240</td><td>The reall surga dunia!! Ada rumah subsidi tanpa renovasi</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7639279136367742228" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">6</span></td><td>17</td><td>25000</td><td>Masa ga mau punya rumah disini 🤩</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7377223510952905989" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">7</span></td><td>16</td><td>3500</td><td>BUKAN MEWAH TAPI MEWAH BANGET Bhumi Saka Arum</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7574006750278356245" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">8</span></td><td>12</td><td>24900</td><td>Yuuk miliki rumah impian kamu</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7409860574256925960" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">9</span></td><td>12</td><td>2800</td><td>MAU PUNYA RUMAH SENDIRI ??? CICILANNYA SEPERTI BAYAR KONTRAK</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7465534846471785734" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-<tr><td><span class="rank ">10</span></td><td>11</td><td>1900</td><td>JANGAN MAU TERTIPU, BELI RUMAH SUBSIDI KOK HARUS RENOVASI</td><td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7574020750882000149" target="_blank" class="video-link">🎬 Buka</a></td></tr>
-
+<tr><th>#</th><th>💬 Komentar</th><th>Tayangan</th><th>Judul Video</th><th>Link</th></tr>
+<tr>
+  <td><span class="rank top1">1</span></td>
+  <td class="num">75</td>
+  <td class="num">12,500</td>
+  <td class="title-cell">EMANG ADA IKLAN RUMAH YG SEMUANYA BILANG MURAH??!</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7527966342968773893" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank top2">2</span></td>
+  <td class="num">34</td>
+  <td class="num">14,700</td>
+  <td class="title-cell">RUMAH SUBSIDI SEMEWAH INI?!!!</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank top3">3</span></td>
+  <td class="num">24</td>
+  <td class="num">6,200</td>
+  <td class="title-cell">RUMAH SUBSIDI TANPA RENOVASI SATU SATUNYA 2 LANTAI</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">4</span></td>
+  <td class="num">20</td>
+  <td class="num">4,023</td>
+  <td class="title-cell">Rumah subsidi 2 lantai sekeren ini kirain 300 juta ke atas</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7641140076444962069" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">5</span></td>
+  <td class="num">19</td>
+  <td class="num">1,240</td>
+  <td class="title-cell">The reall surga dunia!! Ada rumah subsidi tanpa renovasi</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7639279136367742228" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">6</span></td>
+  <td class="num">17</td>
+  <td class="num">25,000</td>
+  <td class="title-cell">Masa ga mau punya rumah disini 🤩</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7377223510952905989" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">7</span></td>
+  <td class="num">16</td>
+  <td class="num">3,500</td>
+  <td class="title-cell">BUKAN MEWAH TAPI MEWAH BANGET Bhumi Saka Arum</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7574006750278356245" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">8</span></td>
+  <td class="num">12</td>
+  <td class="num">24,900</td>
+  <td class="title-cell">Yuuk miliki rumah impian kamu</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7409860574256925960" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">9</span></td>
+  <td class="num">12</td>
+  <td class="num">2,800</td>
+  <td class="title-cell">MAU PUNYA RUMAH SENDIRI ??? CICILANNYA SEPERTI BAYAR KONTRAK</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7465534846471785734" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
+<tr>
+  <td><span class="rank ">10</span></td>
+  <td class="num">11</td>
+  <td class="num">1,900</td>
+  <td class="title-cell">JANGAN MAU TERTIPU, BELI RUMAH SUBSIDI KOK HARUS RENOVASI</td>
+  <td class="lc"><a href="https://www.tiktok.com/@syahfalahproperti/video/7574020750882000149" target="_blank" class="video-link">🎬 Buka</a></td>
+</tr>
 </table>
 </div>
 
